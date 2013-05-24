@@ -27,7 +27,10 @@
         "server_ip": "${PREFIX}-controller"
     },
     "mysql": {
-      "bind_address": "0.0.0.0"
+      "bind_address": "0.0.0.0",
+      "tunable": {
+        "skip-name-resolve": true
+      }
     },
     "openstack": {
       "release": "folsom",
