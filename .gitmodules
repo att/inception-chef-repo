@@ -141,7 +141,7 @@
 	url = git://github.com/att-cloud/cookbook-horizon.git
 [submodule "cookbooks/nova"]
 	path = cookbooks/nova
-	url = git://github.com/att-cloud/cookbook-nova.git
+	url = git://github.com/maoy/cookbook-nova.git
 [submodule "cookbooks/selinux"]
 	path = cookbooks/selinux
 	url = git://github.com/opscode-cookbooks/selinux.git
