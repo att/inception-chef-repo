@@ -94,10 +94,10 @@
       "dhcp_domain": "${PREFIX}",
       "libvirt": {
         "virt_type": "kvm",
-        "bind_interface": "eth2"
+        "bind_interface": "eth1"
       },
       "novnc_proxy": {
-        "bind_interface": "eth2"
+        "bind_interface": "eth1"
       },
       "config": {
         "availability_zone": "zone0",
