@@ -108,7 +108,10 @@
         {
           "label": "private",
           "ipv4_cidr": "10.252.0.0/24",
-          "bridge": "br100"
+          "bridge": "br100",
+          "num_networks": "1",
+          "network_size": "255",
+          "multi_host": "T"
         }
       ],
       "network": {
