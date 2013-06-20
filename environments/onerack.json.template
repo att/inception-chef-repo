@@ -118,7 +118,7 @@
         "flat_interface": "eth2",
         "network_manager": "nova.network.manager.FlatDHCPManager",
         "fixed_range": "10.252.0.0/24",
-        "public_interface": "br100"
+        "public_interface": "eth3"
       }
     },
     "glance": {
