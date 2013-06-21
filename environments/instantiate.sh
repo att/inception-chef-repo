@@ -7,4 +7,3 @@ set -e
 PREFIX=$1
 STYLE=$2
 sed s/\$\{PREFIX\}/${PREFIX}/ $STYLE.json.template > ${PREFIX}.json
-
