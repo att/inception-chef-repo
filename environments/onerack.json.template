@@ -13,6 +13,12 @@
       "vxlan_bridge_ids": [1, 2, 3],
       "netmask" : "255.255.255.0",
       "addresses" : {
+	// eth2 address 0.0.0.0 because Nova network handles
+	// 10.252.0.x/24 address allocation for iVMs and will set
+	// corresponding routing table rules on rVMs
+	//
+	// eth3 address 172.31.0.x/24 instead of 10.253.0.x/24 simply
+	// because it "looks like" public address
         "${PREFIX}-gateway" : ["10.251.0.1", "0.0.0.0", "172.31.0.1"],
         "${PREFIX}-chefserver" : ["10.251.0.2", "0.0.0.0", "172.31.0.2"],
         "${PREFIX}-controller" : ["10.251.0.3", "0.0.0.0", "172.31.0.3"],
@@ -112,13 +118,20 @@
           "num_networks": "1",
           "network_size": "255",
           "multi_host": "T"
+	   // if 8.8.4.4 (Nova network default DNS) is blocked in
+	   // your network, need to add dns1 attribute into Nova
+	   // networks attribute, or manually update
+	   // mysql.nova.networks
         }
       ],
       "network": {
         "flat_interface": "eth2",
         "network_manager": "nova.network.manager.FlatDHCPManager",
         "fixed_range": "10.252.0.0/24",
-        "public_interface": "eth3"
+	 // public_interface use eth0 since only it can forward
+	 // Internet traffic. Change it to eth3 when public network
+	 // and floating IP issues are fixed
+        "public_interface": "eth0"
       }
     },
     "glance": {
