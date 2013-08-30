@@ -10,6 +10,7 @@
   "override_attributes": {
     "openvswitch": {
       "hub_name": "${PREFIX}-gateway",
+      "sdn_controller_name": "${PREFIX}-controller",
       "vxlan_bridge_ids": [1, 2, 3],
       "netmask" : "255.255.255.0",
       "addresses" : {
