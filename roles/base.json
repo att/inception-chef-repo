@@ -37,6 +37,7 @@
   "env_run_lists": {
   },
   "run_list": [
+    "recipe[ntp]",
     "recipe[apt]",
     "recipe[ohai]",
     //"recipe[bash]",
@@ -57,6 +58,9 @@
   "override_attributes": {
     "ntp": {
       "servers": [
+	"0.pool.ntp.org",
+	"1.pool.ntp.org",
+	"2.pool.ntp.org",
         "12.129.64.150",
         "63.240.192.73",
         "63.240.129.148",
